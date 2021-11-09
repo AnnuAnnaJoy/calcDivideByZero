@@ -1,40 +1,40 @@
 """Testing the Calculator"""
-from calculator.main import Calculator
+import pytest
+from calc.calculator import Calculator
+from calc.historyMod.history import History
 
 
-def test_calculator_add():
+@pytest.fixture
+def setup_cleanup_fixture():
+    History.clear_history()
+
+
+def test_calculator_add(setup_cleanup_fixture):
     """Testing the Add function of the calculator"""
     # Arrange by instantiating the calc class
-    calc = Calculator()
-    assert calc.add_number(4, 5) == 9
-
-
-def test_calculator_get_result():
-    """Testing the add method of the calculator"""
-    calc = Calculator()
-    assert calc.add_number(1, 2) == 3
+    Calculator.add_number(4, 5)
+    assert Calculator.get_result_value() == 9
 
 
 def test_calculator_subtract():
     """Testing the subtract method of the calculator"""
-    calc = Calculator()
-    assert calc.subtract_number(10, 6) == 4
+    Calculator.subtract_number(10, 6)
+    assert Calculator.get_result_value() == 4
 
 
 def test_calculator_multiplication():
     """ testing multiplication"""
-    calc = Calculator()
-    assert calc.multiply_numbers(1, 2) == 2
+    Calculator.multiply_numbers(1, 2)
+    assert Calculator.get_result_value() == 2
 
 
 def test_calculator_division():
     """ testing division"""
-    calc = Calculator()
-    assert calc.divide_numbers(12, 2) == 6
+    Calculator.divide_numbers(12, 2)
+    assert Calculator.get_result_value() == 6
 
 
 def zero_division_test(self):
     """ testing division with zero"""
-    calc = Calculator()
     with self.assertRaises(ZeroDivisionError):
-        calc.divide_numbers(4, 0)
+        Calculator.divide_numbers(4, 0)
