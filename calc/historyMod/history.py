@@ -2,7 +2,6 @@
 from calc.calculation.addition import Addition
 from calc.calculation.multiplication import Multiplication
 from calc.calculation.subtraction import Subtraction
-from calc.calculator import Calculator
 
 
 class History:
