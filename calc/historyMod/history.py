@@ -1,5 +1,6 @@
 """history"""
 from calc.calculation.addition import Addition
+from calc.calculation.division import Division
 from calc.calculation.multiplication import Multiplication
 from calc.calculation.subtraction import Subtraction
 
@@ -82,4 +83,10 @@ class History:
     def add_multiplication_calculation(values):
         """Add a multiplication object to history using factory method create"""
         History.add_calculation(Multiplication.create(values))
+        return True
+
+    @staticmethod
+    def add_division_calculation(values):
+        """Add a multiplication object to history using factory method create"""
+        History.add_calculation(Division.create(values))
         return True

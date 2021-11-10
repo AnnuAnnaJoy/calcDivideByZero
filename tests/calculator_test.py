@@ -12,29 +12,26 @@ def setup_cleanup_fixture():
 def test_calculator_add(setup_cleanup_fixture):
     """Testing the Add function of the calculator"""
     # Arrange by instantiating the calc class
-    Calculator.add_number(4, 5)
-    assert Calculator.get_result_value() == 9
+    my_tuple = (1.0, 2.0, 5.0)
+    Calculator.add_number(my_tuple)
+    assert Calculator.get_last_result_value() == 8.0
 
 
-def test_calculator_subtract():
+def test_calculator_subtract(setup_cleanup_fixture):
     """Testing the subtract method of the calculator"""
-    Calculator.subtract_number(10, 6)
-    assert Calculator.get_result_value() == 4
+    my_tuple = (1.0, 2.0, 3.0)
+    Calculator.subtract_numbers(my_tuple)
+    assert Calculator.get_last_result_value() == -4.0
 
 
-def test_calculator_multiplication():
+def test_calculator_multiplication(setup_cleanup_fixture):
     """ testing multiplication"""
-    Calculator.multiply_numbers(1, 2)
-    assert Calculator.get_result_value() == 2
+    my_tuple = (1.0, 2.0, 3.0)
+    Calculator.multiply_numbers(my_tuple)
+    assert Calculator.get_last_result_value() == 2
 
 
-def test_calculator_division():
+def test_calculator_division(setup_cleanup_fixture):
     """ testing division"""
     Calculator.divide_numbers(12, 2)
-    assert Calculator.get_result_value() == 6
-
-
-def zero_division_test(self):
-    """ testing division with zero"""
-    with self.assertRaises(ZeroDivisionError):
-        Calculator.divide_numbers(4, 0)
+    assert Calculator.get_last_result_value() == 6

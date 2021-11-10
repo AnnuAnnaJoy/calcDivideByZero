@@ -13,36 +13,32 @@ class Calculator:
     history = []
 
     @staticmethod
-    def add_number(value_a, value_b):
+    def add_number(tuple_values: tuple):
         """ adds number to result"""
         # create an addition object using the factory we created on the calculation class
-        addition = Addition.create(value_a, value_b)
-        History.add_calculation_to_history(addition)
-        return History.get_result_of_last_calculation_added_to_history()
+        History.add_addition_calculation(tuple_values)
+        return True
 
     @staticmethod
-    def subtract_number(value_a, value_b):
+    def subtract_number(tuple_values: tuple):
         """ subtract number from result"""
-        subtraction = Subtraction.create(value_a, value_b)
-        History.add_calculation_to_history(subtraction)
-        return History.get_result_of_last_calculation_added_to_history()
+        History.add_subtraction_calculation(tuple_values)
+        return True
 
     @staticmethod
-    def multiply_numbers(value_a, value_b):
+    def multiply_numbers(tuple_values: tuple):
         """ multiply two numbers and store the result"""
-        multiplication = Multiplication.create(value_a, value_b)
-        History.add_calculation_to_history(multiplication)
-        return History.get_result_of_last_calculation_added_to_history()
+        History.add_multiplication_calculation(tuple_values)
+        return True
 
     @staticmethod
-    def divide_numbers(value_a, value_b):
+    def divide_numbers(tuple_values: tuple):
         """ divide two numbers and store the result"""
-        division = Division.create(value_a, value_b)
-        History.add_calculation_to_history(division)
-        return History.get_result_of_last_calculation_added_to_history()
+        History.add_division_calculation(tuple_values)
+        return True
 
     @staticmethod
-    def get_result_value():
+    def get_last_result_value():
         """ This is the gets the result of the calculation"""
         # don't need more than one action per function
         return History.get_last_calculation_result_value()

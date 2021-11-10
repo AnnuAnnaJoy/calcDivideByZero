@@ -6,4 +6,7 @@ class Multiplication(Calculation):
 
     def get_result(self):
         """multiplication """
-        return self.a * self.b
+        total_product = 1
+        for value in self.values:
+            total_product *= value
+        return total_product

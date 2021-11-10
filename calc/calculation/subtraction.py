@@ -6,4 +6,7 @@ class Subtraction(Calculation):
 
     def get_result(self):
         """ subtraction """
-        return self.value_a - self.value_b
+        total_diff = 2 * self.values[0]
+        for value in self.values:
+            total_diff -= value
+        return total_diff

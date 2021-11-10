@@ -6,23 +6,20 @@ class Calculation:
 
     """ Constructor"""
 
-    def _init_(self, a, b):
-        self.a = a
-        self.b = b
+    def _init_(self, values: tuple):
+        self.values = Calculation.convert_args_to_tuple_of_float(values)
 
     """ Add method"""
 
     @classmethod
-    def create(cls, a, b):
+    def create(cls, values: tuple):
         """Using class method to create objects of all individual operations"""
-        return cls(a, b)
+        return cls(values)
 
-    @property
-    def value_a(self):
-        """Getter For Value A"""
-        return self.a
-
-    @property
-    def value_b(self):
-        """Getter For Value B"""
-        return self.b
+    @staticmethod
+    def convert_args_to_tuple_of_float(values):
+        """ standardize values to list of floats"""
+        list_values_float = []
+        for item in values:
+            list_values_float.append(float(item))
+        return tuple(list_values_float)

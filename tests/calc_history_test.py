@@ -16,7 +16,7 @@ def setup_cleanup_fixture():
 @pytest.fixture
 def setup_add_number_fixture():
     values = (1, 2)
-    addition = Addition(values)
+    addition = Addition.convert_args_to_tuple_of_float(values)
     History.add_calculation(addition)
 
 
@@ -25,7 +25,8 @@ def test_clear_history(setup_cleanup_fixture, setup_add_number_fixture):
     assert Calculator.add_number(1, 2) == 3
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5
-    assert History.history_count() == 4
+    assert Calculator.add_number(5, 2) == 7
+    assert History.history_count() == 5
     assert History.clear_history() == True
     assert History.history_count() == 0
 
