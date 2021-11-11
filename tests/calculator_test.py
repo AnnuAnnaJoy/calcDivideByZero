@@ -34,5 +34,6 @@ def test_calculator_multiplication(setup_cleanup_fixture):
 
 def test_calculator_division(setup_cleanup_fixture):
     """ testing division"""
-    Calculator.divide_numbers(12, 2)
-    assert Calculator.get_last_result_value() == 6
+    my_tuple = (12.0, 2.0)
+    Calculator.divide_numbers(my_tuple)
+    assert Calculator.get_last_result_value() == 6.0
