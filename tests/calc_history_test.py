@@ -1,7 +1,6 @@
 """Testing the Calculator History"""
 
 from calc.calculation.addition import Addition
-from calc.calculator import Calculator
 from calc.historyMod.history import History
 
 import pytest
@@ -17,18 +16,13 @@ def setup_cleanup_fixture():
 def setup_add_number_fixture():
     """add number fixture"""
     values = (1, 2)
-    addition = Addition.convert_args_to_tuple_of_float(values)
+    addition = Addition(values)
     History.add_calculation(addition)
 
 
 def test_clear_history(setup_cleanup_fixture, setup_add_number_fixture):
     """testing clear history"""
     assert History.history_count() == 1
-    assert Calculator.add_number(1, 2) == 3
-    assert Calculator.add_number(2, 2) == 4
-    assert Calculator.add_number(3, 2) == 5
-    assert Calculator.add_number(5, 2) == 7
-    assert History.history_count() == 5
     assert History.clear_history() == True
     assert History.history_count() == 0
 
@@ -36,8 +30,8 @@ def test_clear_history(setup_cleanup_fixture, setup_add_number_fixture):
 def test_count_history(setup_cleanup_fixture, setup_add_number_fixture):
     """testing history count"""
     assert History.history_count() == 1
-    assert Calculator.add_number(2, 2) == 4
-    assert Calculator.add_number(3, 2) == 5
+    values = (5, 10)
+    History.add_calculation(Addition(values))
     assert History.history_count() == 3
 
 

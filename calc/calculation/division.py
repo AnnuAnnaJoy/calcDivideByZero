@@ -13,4 +13,4 @@ class Division(Calculation):
                 quotient /= value
             return quotient
         except ZeroDivisionError as err:
-            raise "The divisor must not be zero"
+            raise err
