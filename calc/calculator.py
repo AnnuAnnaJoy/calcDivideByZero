@@ -1,15 +1,10 @@
 """ This is the calculator program"""
-from calc.calculation.addition import Addition
-from calc.calculation.subtraction import Subtraction
-from calc.calculation.multiplication import Multiplication
-from calc.calculation.division import Division
 from calc.historyMod.history import History
 
 
 class Calculator:
     """ This is the Calculator class"""
 
-    """calculator static property"""
     history = []
 
     @staticmethod

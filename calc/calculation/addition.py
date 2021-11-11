@@ -3,6 +3,7 @@ from calc.calculation.calculation import Calculation
 
 
 class Addition(Calculation):
+    """Addition class"""
 
     def get_result(self):
         """ addition """

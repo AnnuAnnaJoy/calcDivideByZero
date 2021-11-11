@@ -2,18 +2,15 @@
 
 
 class Calculation:
-    result = 0
+    """Calculation class"""
 
-    """ Constructor"""
-
-    def _init_(self, values: tuple):
+    def __init__(self, values: tuple):
+        """ constructor method"""
         self.values = Calculation.convert_args_to_tuple_of_float(values)
-
-    """ Add method"""
 
     @classmethod
     def create(cls, values: tuple):
-        """Using class method to create objects of all individual operations"""
+        """ factory method"""
         return cls(values)
 
     @staticmethod
