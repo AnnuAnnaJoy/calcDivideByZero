@@ -4,13 +4,13 @@ from calc.calculation.addition import Addition
 from calc.historyMod.history import History
 
 
-@pytest.fixture(name="setup_cleanup_fixture")
+@pytest.fixture
 def setup_cleanup_fixture():
     """cleanup fixture"""
     History.clear_history()
 
 
-@pytest.fixture(name="setup_add_number_fixture")
+@pytest.fixture
 def setup_add_number_fixture():
     """add number fixture"""
     values = (1, 2)

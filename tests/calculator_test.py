@@ -4,7 +4,7 @@ from calc.calculator import Calculator
 from calc.historyMod.history import History
 
 
-@pytest.fixture(name="cleanup_fixture")
+@pytest.fixture
 def setup_cleanup_fixture():
     """cleanup fixture"""
     History.clear_history()
