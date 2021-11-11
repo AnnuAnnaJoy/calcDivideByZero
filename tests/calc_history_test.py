@@ -1,5 +1,4 @@
 """Testing the Calculator History"""
-import pprint
 
 from calc.calculation.addition import Addition
 from calc.calculator import Calculator
@@ -10,17 +9,20 @@ import pytest
 
 @pytest.fixture
 def setup_cleanup_fixture():
+    """cleanup fixture"""
     History.clear_history()
 
 
 @pytest.fixture
 def setup_add_number_fixture():
+    """add number fixture"""
     values = (1, 2)
     addition = Addition.convert_args_to_tuple_of_float(values)
     History.add_calculation(addition)
 
 
 def test_clear_history(setup_cleanup_fixture, setup_add_number_fixture):
+    """testing clear history"""
     assert History.history_count() == 1
     assert Calculator.add_number(1, 2) == 3
     assert Calculator.add_number(2, 2) == 4
@@ -32,6 +34,7 @@ def test_clear_history(setup_cleanup_fixture, setup_add_number_fixture):
 
 
 def test_count_history(setup_cleanup_fixture, setup_add_number_fixture):
+    """testing history count"""
     assert History.history_count() == 1
     assert Calculator.add_number(2, 2) == 4
     assert Calculator.add_number(3, 2) == 5

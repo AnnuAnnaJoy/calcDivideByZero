@@ -3,6 +3,7 @@ from calc.calculation.calculation import Calculation
 
 
 class Division(Calculation):
+    """Division class"""
 
     def get_result(self):
         """division """
@@ -12,4 +13,4 @@ class Division(Calculation):
                 quotient /= value
             return quotient
         except ZeroDivisionError as err:
-            raise ZeroDivisionError("The divisor must not be zero") from err
+            raise "The divisor must not be zero"

@@ -3,6 +3,7 @@ from calc.calculation.division import Division
 
 
 def test_division():
-    nos = (10.0, 2.0)
+    """testing division class"""
+    nos = (10, 2)
     division = Division(nos)
     assert division.get_result() == 5

@@ -6,6 +6,7 @@ from calc.historyMod.history import History
 
 @pytest.fixture
 def setup_cleanup_fixture():
+    """cleanup fixture"""
     History.clear_history()
 
 
@@ -20,7 +21,7 @@ def test_calculator_add(setup_cleanup_fixture):
 def test_calculator_subtract(setup_cleanup_fixture):
     """Testing the subtract method of the calculator"""
     my_tuple = (1.0, 2.0, 3.0)
-    Calculator.subtract_numbers(my_tuple)
+    Calculator.subtract_number(my_tuple)
     assert Calculator.get_last_result_value() == -4.0
 
 
@@ -28,7 +29,7 @@ def test_calculator_multiplication(setup_cleanup_fixture):
     """ testing multiplication"""
     my_tuple = (1.0, 2.0, 3.0)
     Calculator.multiply_numbers(my_tuple)
-    assert Calculator.get_last_result_value() == 2
+    assert Calculator.get_last_result_value() == 6
 
 
 def test_calculator_division(setup_cleanup_fixture):

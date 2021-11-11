@@ -8,7 +8,6 @@ from calc.calculation.subtraction import Subtraction
 class History:
     """ This is the History class"""
 
-    """calculator static property"""
     history = []
 
     @staticmethod

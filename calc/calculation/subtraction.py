@@ -3,6 +3,7 @@ from calc.calculation.calculation import Calculation
 
 
 class Subtraction(Calculation):
+    """Subtraction class"""
 
     def get_result(self):
         """ subtraction """
