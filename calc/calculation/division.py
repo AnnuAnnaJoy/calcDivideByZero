@@ -7,7 +7,7 @@ class Division(Calculation):
 
     def get_result(self):
         """division """
-        quotient = 1
+        quotient = self.values[0] * self.values[0]
         try:
             for value in self.values:
                 quotient /= value
