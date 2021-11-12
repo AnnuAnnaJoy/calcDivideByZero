@@ -1,5 +1,5 @@
 # Calculator Project Setup
-[![Build Status](https://app.travis-ci.com/AnnuAnnaJoy/calcDivideByZero.svg?branch=main)](https://app.travis-ci.com/AnnuAnnaJoy/calcDivideByZero)
+[![Build Status](https://app.travis-ci.com/AnnuAnnaJoy/calcDivideByZero.svg?branch=calcRefactor)](https://app.travis-ci.com/AnnuAnnaJoy/calcDivideByZero)
 To run tests, Lint, and Coverage report use this command:
 
 pytest  --pylint --cov
