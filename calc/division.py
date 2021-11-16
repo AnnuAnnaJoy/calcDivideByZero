@@ -3,6 +3,7 @@ from calc.calculation import Calculation
 
 
 class Division(Calculation):
+    """Division class"""
 
     def get_result(self):
         """division """

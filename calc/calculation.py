@@ -2,27 +2,24 @@
 
 
 class Calculation:
+    """Calculation class"""
     result = 0
 
-    """ Constructor"""
-
-    def _init_(self, a, b):
-        self.a = a
-        self.b = b
-
-    """ Add method"""
+    def __init__(self, val_a, val_b):
+        self.val_a = val_a
+        self.val_b = val_b
 
     @classmethod
-    def create(cls, a, b):
+    def create(cls, val_a, val_b):
         """Using class method to create objects of all individual operations"""
-        return cls(a, b)
+        return cls(val_a, val_b)
 
     @property
     def value_a(self):
         """Getter For Value A"""
-        return self.a
+        return self.val_a
 
     @property
     def value_b(self):
         """Getter For Value B"""
-        return self.b
+        return self.val_b

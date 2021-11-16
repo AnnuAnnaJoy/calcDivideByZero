@@ -3,7 +3,8 @@ from calc.calculation import Calculation
 
 
 class Multiplication(Calculation):
+    """Multiplication class"""
 
     def get_result(self):
         """multiplication """
-        return self.a * self.b
+        return self.val_a * self.val_b
