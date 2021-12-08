@@ -7,10 +7,13 @@ class Division(Calculation):
 
     def get_result(self):
         """division """
-        quotient = self.values[0] * self.values[0]
+        quotient = 0
         try:
-            for value in self.values:
-                quotient /= value
+            for index, value in enumerate(self.values):
+                if index == 0:
+                    quotient = value
+                else:
+                    quotient /= value
             return quotient
         except ZeroDivisionError as err:
             raise err

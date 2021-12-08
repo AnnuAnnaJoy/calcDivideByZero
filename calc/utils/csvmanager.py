@@ -6,9 +6,12 @@ from calc.calculator import Calculator
 class CsvManager:
     @staticmethod
     def csv_process(operators):
-        if os.listdir(os.getcwd()):
-            # print(os.listdir(os.getcwd()))
-            df = pd.read_csv('Utility/inputFile/smallset.csv', dtype={"sno": int, "value1": int, "value2": int})
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(base_dir, "inputFile")
+        file_loc = os.path.join(file_path, "smallset.csv")
+        if os.listdir(file_path):
+            # print(os.listdir(file_path))
+            df = pd.read_csv(file_loc, dtype={"sno": int, "value1": int, "value2": int})
             df.set_index('sno', inplace=True)
             my_tuple = ()
             if operators is None:
@@ -34,4 +37,4 @@ class CsvManager:
             df2 = pd.DataFrame(storedict, columns=['result'])
             df3 = pd.concat([df1, df2], axis=1)
             # print(df3[1:len(df)+1])
-            df3[1:len(df) + 1].to_csv('Utility/resultFile/results.csv', index_label='sno')
+            df3[1:len(df) + 1].to_csv('calc/utils/resultFile/results.csv', index_label='sno')

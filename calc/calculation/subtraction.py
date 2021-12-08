@@ -7,7 +7,10 @@ class Subtraction(Calculation):
 
     def get_result(self):
         """ subtraction """
-        total_diff = 2 * self.values[0]
-        for value in self.values:
-            total_diff -= value
+        total_diff = 0
+        for index, value in enumerate(self.values):
+            if index == 0:
+                total_diff = value
+            else:
+                total_diff -= value
         return total_diff

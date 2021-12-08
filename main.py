@@ -1,6 +1,10 @@
 """Main class"""
+import pathlib
+
 from pip._vendor.distlib.compat import raw_input
-from calc.Utility.csvmanager import CsvManager
+from calc.utils.csvmanager import CsvManager
+
+BASE_DIR = pathlib.Path().resolve()
 
 
 class CalcCSV:
@@ -11,7 +15,7 @@ class CalcCSV:
     print("2.Subtract")
     print("3.Multiply")
     print("4.Divide")
-    # choice = raw_input("Enter your choice: ")
+    choice = raw_input("Enter your choice: ")
     print("fetching CSV file")
-    CsvManager.csv_process('3')
+    CsvManager.csv_process(choice)
     print("CSV file processing")
