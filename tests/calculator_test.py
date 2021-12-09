@@ -4,12 +4,6 @@ from calc.calculator import Calculator
 from calc.historyMod.history import History
 
 
-@pytest.fixture
-def setup_cleanup_fixture():
-    """cleanup fixture"""
-    History.clear_history()
-
-
 def test_calculator_add(setup_cleanup_fixture):
     """Testing the Add function of the calculator"""
     # pylint: disable=unused-argument,redefined-outer-name

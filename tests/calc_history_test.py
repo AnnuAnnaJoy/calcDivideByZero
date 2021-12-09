@@ -1,21 +1,6 @@
 """Testing the Calculator History"""
-import pytest
 from calc.calculation.addition import Addition
 from calc.historyMod.history import History
-
-
-@pytest.fixture
-def setup_cleanup_fixture():
-    """cleanup fixture"""
-    History.clear_history()
-
-
-@pytest.fixture
-def setup_add_number_fixture():
-    """add number fixture"""
-    values = (1, 2)
-    addition = Addition(values)
-    History.add_calculation(addition)
 
 
 def test_clear_history(setup_cleanup_fixture, setup_add_number_fixture):

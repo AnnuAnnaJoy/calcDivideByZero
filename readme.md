@@ -1,4 +1,10 @@
 # Calculator Project Setup
+output image:
+![](images/output.png)
+
+test screenshot:
+![](images/test_screenshot.png)
+
 [![Build Status](https://app.travis-ci.com/AnnuAnnaJoy/calcDivideByZero.svg?branch=calcRefactor)](https://app.travis-ci.com/AnnuAnnaJoy/calcDivideByZero)
 To run tests, Lint, and Coverage report use this command:
 
