@@ -1,5 +1,5 @@
 """ This is the calculator program"""
-from calc.historyMod.history import History
+from calc.historymod.history import History
 
 
 class Calculator:

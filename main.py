@@ -7,6 +7,7 @@ from calc.utils.csvmanager import CsvManager
 
 class CalcCSV:
     """Main class for CSV"""
+    # pylint: disable=too-few-public-methods
 
     print("Select operation.")
     print("1.Add")
@@ -31,6 +32,7 @@ class CalcCSV:
 
 class AutoCalcCSV:
     """Main class for auto calc CSV"""
+    # pylint: disable=too-few-public-methods
     print("Reading CSV")
     cv = CsvManager()
     df = cv.read_csv()

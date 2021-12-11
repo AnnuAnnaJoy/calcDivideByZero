@@ -5,14 +5,16 @@ from calc.calculator import Calculator
 
 class CsvCalc:
     """ CSV calculation process"""
+    # pylint: disable=too-few-public-methods
+
     @staticmethod
-    def csvprocess(df, operators):
+    def csvprocess(dataf, operators):
         """process"""
         my_tuple = ()
-        storedict = [0] * (len(df) + 1)
-        for i in range(len(df) + 1):
+        storedict = [0] * (len(dataf) + 1)
+        for i in range(len(dataf) + 1):
             try:
-                my_tuple = (df['value1'][i], df['value2'][i])
+                my_tuple = (dataf['value1'][i], dataf['value2'][i])
             except KeyError as err:
                 print(err)
             if operators == 1:
@@ -26,11 +28,7 @@ class CsvCalc:
             res = Calculator.get_last_result_value()
             storedict[i] = res
 
-        df1 = pd.DataFrame(df[['value1', 'value2']])
+        df1 = pd.DataFrame(dataf[['value1', 'value2']])
         df2 = pd.DataFrame(storedict, columns=['result'])
         df3 = pd.concat([df1, df2], axis=1)
         return df3
-
-
-
-

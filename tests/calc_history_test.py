@@ -1,6 +1,6 @@
 """Testing the Calculator History"""
 from calc.calculation.addition import Addition
-from calc.historyMod.history import History
+from calc.historymod.history import History
 
 
 def test_clear_history(setup_cleanup_fixture, setup_add_number_fixture):

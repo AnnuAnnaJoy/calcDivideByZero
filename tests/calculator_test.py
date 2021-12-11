@@ -1,7 +1,5 @@
 """Testing the Calculator"""
-import pytest
 from calc.calculator import Calculator
-from calc.historyMod.history import History
 
 
 def test_calculator_add(setup_cleanup_fixture):
