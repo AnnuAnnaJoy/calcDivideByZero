@@ -1,4 +1,5 @@
 """Division class"""
+import logging
 from calc.calculation.calculation import Calculation
 
 
@@ -8,12 +9,14 @@ class Division(Calculation):
     def get_result(self):
         """division """
         quotient = 0
-        try:
-            for index, value in enumerate(self.values):
-                if index == 0:
-                    quotient = value
-                else:
+        for index, value in enumerate(self.values):
+            if index == 0:
+                quotient = value
+            else:
+                try:
                     quotient /= value
-            return quotient
-        except ZeroDivisionError as err:
-            raise err
+                except ZeroDivisionError as err:
+                    logging.error(
+                        "Exception occurred %s %s / %s", err, self.values[0], self.values[1],
+                        exc_info=True)
+        return quotient
