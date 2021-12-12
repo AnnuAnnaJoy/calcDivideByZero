@@ -25,3 +25,10 @@ class CsvManager:
         file_name = operation + "_result.csv"
         file_loc = os.path.join(file_path, file_name)
         dataf[1:len(dataf) + 1].to_csv(file_loc, index_label='sno')
+
+    @staticmethod
+    def path_file():
+        """ returns path of csv file method"""
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        file_path = os.path.join(base_dir, "inputFile")
+        return file_path
