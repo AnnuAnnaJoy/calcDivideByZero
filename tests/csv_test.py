@@ -1,6 +1,7 @@
 """Testing the CSV flows"""
 import os
 import logging
+import pandas as pd
 
 from calc.calculation.csvcalculation import CsvCalc
 from calc.utils.csvmanager import CsvManager
@@ -69,3 +70,32 @@ def test_add_result_file(read_csv_fixture):
     os.chdir(file_path)
     print(file_path)
     assert os.path.exists('./addtest_result.csv') is True
+
+
+def test_write_csv():
+    """test_write_csv"""
+
+    fullpath = ''
+    name_dict = {
+        'value1': ['1.0', '2.0', '3.0', '4.0'],
+        'value2': ['1.0', '2.0', '3.0', '4.0'],
+        'result': [2.0, 4.0, 6.0, 8.0]
+    }
+
+    df = pd.DataFrame(name_dict)
+    #Act
+
+    CsvManager.write_csv(df, fullpath)
+    #Assert
+    assert os.path.exists(fullpath)
+
+def test_read_csv():
+    """testing that our calculator has a static method for addition"""
+    #Arrange
+    filename = 'csv_output.csv'
+    path = 'tests/test_data'
+    fullPath = path + '/' + filename
+    #Act
+    df = Read.DataFrameFromCSVFile(fullPath)
+    #Assert
+    assert type(df) is pandas.DataFrame

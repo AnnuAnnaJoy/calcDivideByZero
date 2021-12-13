@@ -2,13 +2,16 @@
 from flask import Flask, request
 from flask import render_template
 from calc.calculator import Calculator
+from werkzeug.debug import DebuggedApplication
 
 app = Flask(__name__)
-
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.wsgi_app = DebuggedApplication(app.wsgi_app, True)
 
 @app.route("/")
 def index():
     """index  Route Response"""
+    #return IndexController.get()
     return render_template('index.html')
 
 
@@ -48,3 +51,11 @@ def good_calc(value1, value2):
     response = "The result of the calculation is: " \
                + str(Calculator.get_last_result_value()) + '<a href="/"> back</a>'
     return response
+
+@app.route("/calculator", methods=['GET'])
+def calculator_get():
+    return CalculatorController.get()
+
+@app.route("/calculator", methods=['POST'])
+def calculator_post():
+    return CalculatorController.post()
