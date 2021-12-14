@@ -1,8 +1,6 @@
 # Calculator Project Setup
-Flash message images:
-![](app/static/images/novalueerror.png)
-![](images/divisionbyzero.png)
-[![Build Status](https://app.travis-ci.com/AnnuAnnaJoy/calcDivideByZero.svg?branch=calcRefactor)](https://app.travis-ci.com/AnnuAnnaJoy/calcDivideByZero)
+Result table image:
+![](app/static/images/table.png)
 To run tests, Lint, and Coverage report use this command:
 
 pytest  --pylint --cov
