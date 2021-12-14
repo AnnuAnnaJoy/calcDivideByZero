@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="History Of Internet, Python & OOPS">
+  <meta name="description" content="Python Overview & Calculator Demo">
   <meta name="author" content="">
   <link rel="icon" href="../static/images/img4.ico">
 
-  <title>History Of Internet, Python & OOPS</title>
+  <title>Python Overview & Calculator Demo</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
 
@@ -56,6 +56,8 @@
         <div class="collapse show" id="dashboard-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
             <li><a href="pythonHome.html" class="link-dark rounded">Overview</a></li>
+            <li><a href="calc.html" class="link-dark rounded">Calculator Demo</a></li>
+            <li><a href="result.html" class="link-dark rounded">Calculator History</a></li>
           </ul>
         </div>
       </li>
@@ -118,10 +120,10 @@ As an example we have created addition_test.py as follows which will be used to 
     <br>
     Eg:
     <br><pre><code>
-    assert Calculator.add_number(1, 2) == 3
+    assert Calculator.addition(1, 2) == 3
   <br></code></pre>
   <p style="padding-right: 90px;padding-top: 10px;">
-    Here we are checking whether the output of the method  add_number of the Calculator class is 3, when we provide
+    Here we are checking whether the output of the method  addition of the Calculator class is 3, when we provide
     inputs as 1 & 2. In this example inputs are arranged as in Arrange block and code that sets up the conditions
     for the test action to get result is framed using calling the method of Calculator class as in Act block. At
     the end assert is used to verify the result.
@@ -130,7 +132,7 @@ As an example we have created addition_test.py as follows which will be used to 
     def test_calculator_multiply(setup_cleanup_fixture):<br>
     """ tests multiplication of two numbers"""<br>
     # pylint: disable=unused-argument,redefined-outer-name<br>
-    assert Calculator.multiply_numbers(1, 2) == 2<br></p>
+    assert Calculator.multiplication(1, 2) == 2<br></p>
     </code></pre>
   <p style="padding-right: 100px;padding-top: 10px;">
     In testing, a fixture provides a defined, reliable and consistent context for the tests. This could include
@@ -193,7 +195,7 @@ Using pandas we can test external data in any format as above which are present 
 </div></div>
 <footer class="footer">
   <div class="container">
-    <span class="text-muted" style="padding-left: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; Copyright 2021, Internet History Pythoon & OOPS Inc &nbsp;&nbsp;|&nbsp;&nbsp;
+    <span class="text-muted" style="padding-left: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; Copyright 2021, Python Overview & Calculator  Inc &nbsp;&nbsp;|&nbsp;&nbsp;
 
         Website Raised by Annu  &nbsp;&nbsp;|&nbsp;&nbsp; Contact us: mailto: aaj45@njit.edu  &nbsp;&nbsp;|&nbsp;&nbsp;
         <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fsagaofinternetpythonandoops.eastus.azurecontainer.io%2F" style="text-decoration: none">W3CValidator link</a>
