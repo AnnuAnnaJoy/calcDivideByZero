@@ -27,4 +27,5 @@ class Division(Calculation):
                         "Exception occurred in file %s during operation %s %s / %s",
                         os.listdir(CsvManager.path_file()), err, self.values[0],
                         self.values[1], exc_info=True)
+                    quotient = 'ZeroDivisionError'
         return quotient

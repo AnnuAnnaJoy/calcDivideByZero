@@ -18,13 +18,13 @@ class CsvCalc:
             except KeyError as err:
                 print(err)
             if operators == 1:
-                Calculator.add_number(my_tuple)
+                Calculator.addition(my_tuple)
             elif operators == 2:
-                Calculator.subtract_number(my_tuple)
+                Calculator.subtraction(my_tuple)
             elif operators == 3:
-                Calculator.multiply_numbers(my_tuple)
+                Calculator.multiplication(my_tuple)
             else:
-                Calculator.divide_numbers(my_tuple)
+                Calculator.division(my_tuple)
             res = Calculator.get_last_result_value()
             storedict[i] = res
 
