@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Python Overview & Calculator Demo">
+  <meta name="author" content="">
+  <link rel="icon" href="../static/images/img4.ico">
+
+  <title>Python Overview & Calculator Demo</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
+
+  <!-- Bootstrap core CSS -->
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <img id ="logo" alt="logo" src="../static/images/history.jpeg"/>
+    <a class="navbar-brand header-right" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reference.html">Reference</a>
+        </li>
+      </ul>
+      <div class="navbar-brand" style="line-height:60px !important; margin-left: 300px;font-family: cursive;font-size: 30px">
+        Pylint!</div>
+    </div>
+
+  </nav>
+</header>
+<div class="flex-container b-example-divider">
+  <div class="flex-child sidenavnew flex-column flex-shrink-0 p-3 bg-white">
+
+    <ul class="list-unstyled ps-0">
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+          Python Home
+        </button>
+        <div class="collapse show" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="pythonHome.html" class="link-dark rounded">Overview</a></li>
+            <li><a href="calc.html" class="link-dark rounded">Calculator Demo</a></li>
+            <li><a href="result.html" class="link-dark rounded">Calculator History</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">
+          Python Testing
+        </button>
+        <div class="collapse show" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="aaatesting.html" class="link-dark rounded">AAA testing</a></li>
+            <li><a href="pytest.html" class="link-dark rounded">Pytest</a></li>
+            <li><a href="pylint.html" class="link-dark rounded">Pylint</a></li>
+
+          </ul>
+        </div>
+      </li>
+
+
+    </ul>
+
+
+  </div>
+
+  <div class="main-child">
+
+      <h4>Pylint - Style Checking and Error Spotting
+  </h4><br>
+    <p style="padding-right: 100px!important;padding-top: 2px;">
+    The Python community has defined certain recommended programming styles to assist everyone in writing
+      code in a consistent, shared style that makes the most sense. PEP-8 is a style that captures this. Pylint is a
+      simple and quick way to determine if your code has caught the essence of PEP-8 and is hence 'friendlier' to other
+      possible users. Pylint can inform you where you've gone wrong and guide you in the right path for figuring out
+      what you've done wrong and how to fix it.is an intelligent code analysis tool that understands your Python code. It
+      catches common errors like misspelled variable names, to sneakier problems like non-returning branches.
+      Running Pylint with no arguments will invoke the help dialogue and give you a idea of the arguments available to
+      you. It also enforces a lot of best practices, such as keeping try ... except blocks focused on a few specific
+      exception classes, and avoiding bad default arguments like empty lists or dictionaries. Pylint is unrivaled in
+      strictness- it has a lot of checks for everything from superfluous warnings to serious errors. The downside to
+      using Pylint is sometimes the check is just wrong; you'll want to keep your .pylintrc file close when you know
+      you're right.</p>
+    <pre><code>
+  pip install pylint
+  pylint --generate-rcfile > .pylintrc
+</code></pre>
+    <p style="padding-right: 100px;padding-top: 10px;">
+      Like most Python tools, you can download Pylint from PyPi using pip. You might want to also create a .pylintrc
+      file for your project. This file should be checked into source control, as well. Pylint can generate a default
+      .pylintrc file. A common complaint when Pylint is initially run on a new piece of code is that it is too 'noisy.'
+      All available warnings are enforced by default in the current configuration.
+    </p>
+
+    <p style="padding-right: 90px;padding-top: 10px;">
+      <span style="font-weight: bold;">Tips:</span>
+    <ul>
+      <li>
+        Many of Pylint’s commonly used command line options have shortcuts. for example, “–reports=n” can be abbreviated
+        to “-rn”. Pylint’s man page lists all these shortcuts.
+      </li>
+      <li>
+        There are fairly well defined conventions in PEP-8 around naming things like instance variables, functions,
+        classes, etc. The conventions focus on the use of UPPERCASE and lowercase as well as the characters that
+        separate multiple words in the name. This lends itself well to checking via a regular expression, thus the
+        “should match (([A-Z_][A-Z1-9_]*)|(__.*__))$”.
+      </li>
+      <li>
+        Pylint is fully customizable: modify your pylintrc to customize
+        which errors or conventions are important to you.
+      </li>
+    </ul>
+    <img src="../static/images/pylint.png" style="height: 300px;width: 1000px;">
+    <br><br><br></p>
+    <p style="padding-right: 100px;padding-top: -2px;">
+      <span style="font-weight: bold;">Pylint - Errors:</span><br>
+      Pylint has a significant number of checks it can perform. Many are disabled for the purposes of
+      Adafruit Learn guide code. The important checks for this guide are the ones Adafruit does not
+      disable. Pylint has a standard format to its output. When there is a syntax error, it will not
+      show a code rating. Depending on your version of Pylint, you may or may not see the first line
+      informing you what .pylintrc configuration file you're using.
+      <img src="../static/images/pylintt.png" style="height: 300px;width: 1000px;">
+      For the program Calculator we could observe, below mentioned errors while running pylint.
+      <pre>
+    <code>
+      =================================================== FAILURES ===================================================
+      ______________________________________ [pylint] UtilityFiles/__init__.py _______________________________________
+      C:  1, 0: Module name "UtilityFiles" doesn't conform to snake_case naming style (invalid-name)
+      ____________________________________ [pylint] UtilityFiles/absolutePath.py _____________________________________
+      C:  1, 0: Module name "absolutePath" doesn't conform to snake_case naming style (invalid-name)
+      C:  1, 0: Missing module docstring (missing-module-docstring)
+      __________________________________________ [pylint] calc/csvreader.py __________________________________________
+      C:  3, 0: Final newline missing (missing-final-newline)
+      C:  1, 0: Missing module docstring (missing-module-docstring)
+============================= 3 failed, 14 passed, 18 skipped, 2 warnings in 1.40s =============================
+    </code>
+  </pre>
+    </p>
+    <p style="padding-right: 110px;padding-top: -2px;">
+    The error lines are composed of the same four key parts:<br>
+      1. The file name: UtilityFiles.py<br>
+      2. The line containing the error: 1:<br>
+      3. The details of the error: Module name "UtilityFiles" doesn't conform to snake_case naming style<br>
+      4. The Pylint check name: (invalid-name)<br>
+
+      Be aware that Pylint may not show you all the errors at once. It will cascade fail by returning one error
+      and then, once that error is resolved, returning another series of errors. This is why it's important to
+      run Pylint locally, otherwise you'll be waiting for the remote linter to run each time before you can
+      start working on the next set of errors. Once syntax errors have been resolved, your pylint tests will
+      be passed.
+<br>
+      <br><br><br>
+    </p>
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted" style="padding-left: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; Copyright 2021, Python Overview & Calculator  Inc &nbsp;&nbsp;|&nbsp;&nbsp;
+
+        Website Raised by Annu  &nbsp;&nbsp;|&nbsp;&nbsp; Contact us: mailto: aaj45@njit.edu  &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fsagaofinternetpythonandoops.eastus.azurecontainer.io%2F" style="text-decoration: none">W3CValidator link</a>
+    </span>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"  crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
+

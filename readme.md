@@ -1,5 +1,12 @@
 # Calculator Project Setup
-[![Build Status](https://app.travis-ci.com/AnnuAnnaJoy/calcDivideByZero.svg?branch=main)](https://app.travis-ci.com/AnnuAnnaJoy/calcDivideByZero)
+Result CSV:
+![](images/resultcsv.png)
+Test results:
+![](images/test_screenshot.png)
+![](images/pylint1.png)
+![](images/pylint2.png)
+Result table image:
+![](app/static/images/table.png)
 To run tests, Lint, and Coverage report use this command:
 
 pytest  --pylint --cov

@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Python Overview & Calculator Demo">
+    <meta name="author" content="">
+    <link rel="icon" href="../static/images/img4.ico">
+
+    <title>Python Overview & Calculator Demo</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
+
+    <!-- Bootstrap core CSS -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="../static/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <img id ="logo" alt="logo" src="../static/images/history.jpeg"/>
+        <a class="navbar-brand header-right" href="index.html">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="reference.html">Reference</a>
+                </li>
+            </ul>
+            <div class="navbar-brand" style="line-height:60px !important; margin-left: 300px;font-family: cursive;font-size: 30px">
+                Python - pytest!</div>
+        </div>
+
+    </nav>
+</header>
+<div class="flex-container b-example-divider">
+    <div class="flex-child sidenavnew flex-column flex-shrink-0 p-3 bg-white">
+
+        <ul class="list-unstyled ps-0">
+
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+                    Python Home
+                </button>
+                <div class="collapse show" id="dashboard-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="pythonHome.html" class="link-dark rounded">Overview</a></li>
+                        <li><a href="calc.html" class="link-dark rounded">Calculator Demo</a></li>
+                        <li><a href="result.html" class="link-dark rounded">Calculator History</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">
+                    Python Testing
+                </button>
+                <div class="collapse show" id="orders-collapse">
+                    <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                        <li><a href="aaatesting.html" class="link-dark rounded">AAA testing</a></li>
+                        <li><a href="pytest.html" class="link-dark rounded">Pytest</a></li>
+                        <li><a href="pylint.html" class="link-dark rounded">Pylint</a></li>
+
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+
+
+    </div>
+
+    <div class="main-child">
+
+        <h4>pytest:</h4>
+        <p>
+            There are numerous advantages to testing your code. It boosts your confidence in the code's ability to behave
+            as you expect it to and ensures that changes to your code won't result in regressions. Because writing and
+            maintaining tests is a time-consuming process, you should use all of the tools available to make it as painless
+            as possible. pytest is one of the most useful tools for increasing your testing productivity.The <b>pytest</b> framework
+            makes writing tiny tests simple, but it can also handle complex functional testing for apps and libraries. pytest
+            is a feature-rich, plugin-based ecosystem for testing your Python code.
+
+        </p>
+        <p>
+            <span style="font-weight: bold">How to test Python code using Pytest:</span>
+            <br>
+            1. Install Pytest using below comment
+            <pre><code>
+        $ python -m pip install PyTest
+    </code></pre>
+
+        </p>
+        <p>
+            2. Create tests <br>
+            You can also write different test classes according to project needs. PyTest also enables developers
+            to utilize assert like statements to verify the expert outcome and actual outcome. The function name must
+            start with ‘test_’. Consider below tests functions to test addition & subtraction in a calculator program.
+            Then run the test in CLI using command pytest.
+        </p>
+        <img src="../static/images/pytest.png" style="height: 300px;width: 900px;">
+        <pre><code>
+    $ pytest
+=========================== test session starts ============================
+platform linux -- Python 3.x.y, pytest-6.x.y, py-1.x.y, pluggy-1.x.y
+cachedir: $PYTHON_PREFIX/.pytest_cache
+rootdir: $REGENDOC_TMPDIR
+collected 1 item
+
+test_sample.py F                                                     [100%]
+
+================================= FAILURES =================================
+_______________________________ test_answer ________________________________
+
+    def test_answer():
+>       assert inc(3) == 5
+E       assert 4 == 5
+E        +  where 4 = inc(3)
+
+test_sample.py:6: AssertionError
+========================= short test summary info ==========================
+FAILED test_sample.py::test_answer - assert 4 == 5
+============================ 1 failed in 0.12s =============================
+  </code></pre>
+        <p style="padding-right: 80px!important;">
+            We can verify what we did wrong using tests like above. A large test suite can bring a lot of assurance to a project but it also comes with a cost.
+            Long running testing sessions can be eat up a lot of development time and make iterations slower.
+            By leveraging pytest features, and its plugin ecosystems, it’s possible to speed up the development process
+            dramatically. Pytest involves a compact piece of code. Pytest has rich inbuilt features which require less
+            piece of code compared to unittest. In the case of unittest, we have to import a module, create a class and
+            then define testing functions inside the class. But in the case of pytest, we have to define the functions and
+            assert the conditions inside them.
+        </p>
+<br>
+        <br>
+        <br>
+
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+    <span class="text-muted" style="padding-left: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; Copyright 2021, Python Overview & Calculator  Inc &nbsp;&nbsp;|&nbsp;&nbsp;
+
+        Website Raised by Annu  &nbsp;&nbsp;|&nbsp;&nbsp; Contact us: mailto: aaj45@njit.edu  &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fsagaofinternetpythonandoops.eastus.azurecontainer.io%2F" style="text-decoration: none">W3CValidator link</a>
+    </span>
+    </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"  crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
+

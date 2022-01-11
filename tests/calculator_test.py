@@ -1,40 +1,34 @@
 """Testing the Calculator"""
-from calculator.main import Calculator
+from calc.calculator import Calculator
 
 
-def test_calculator_add():
+def test_calculator_add(setup_cleanup_fixture):
     """Testing the Add function of the calculator"""
-    # Arrange by instantiating the calc class
-    calc = Calculator()
-    assert calc.add_number(4, 5) == 9
+    # pylint: disable=unused-argument,redefined-outer-name
+    my_tuple = (1.0, 2.0, 5.0)
+    Calculator.add_number(my_tuple)
+    assert Calculator.get_last_result_value() == 8.0
 
 
-def test_calculator_get_result():
-    """Testing the add method of the calculator"""
-    calc = Calculator()
-    assert calc.add_number(1, 2) == 3
-
-
-def test_calculator_subtract():
+def test_calculator_subtract(setup_cleanup_fixture):
     """Testing the subtract method of the calculator"""
-    calc = Calculator()
-    assert calc.subtract_number(10, 6) == 4
+    # pylint: disable=unused-argument,redefined-outer-name
+    my_tuple = (1.0, 2.0, 3.0)
+    Calculator.subtract_number(my_tuple)
+    assert Calculator.get_last_result_value() == -4.0
 
 
-def test_calculator_multiplication():
+def test_calculator_multiplication(setup_cleanup_fixture):
     """ testing multiplication"""
-    calc = Calculator()
-    assert calc.multiply_numbers(1, 2) == 2
+    # pylint: disable=unused-argument,redefined-outer-name
+    my_tuple = (1.0, 2.0, 3.0)
+    Calculator.multiply_numbers(my_tuple)
+    assert Calculator.get_last_result_value() == 6
 
 
-def test_calculator_division():
+def test_calculator_division(setup_cleanup_fixture):
     """ testing division"""
-    calc = Calculator()
-    assert calc.divide_numbers(12, 2) == 6
-
-
-def zero_division_test(self):
-    """ testing division with zero"""
-    calc = Calculator()
-    with self.assertRaises(ZeroDivisionError):
-        calc.divide_numbers(4, 0)
+    # pylint: disable=unused-argument,redefined-outer-name
+    my_tuple = (12.0, 2.0)
+    Calculator.divide_numbers(my_tuple)
+    assert Calculator.get_last_result_value() == 6.0

@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Python Overview & Calculator Demo">
+  <meta name="author" content="">
+  <link rel="icon" href="../static/images/img4.ico">
+
+  <title>Python Overview & Calculator Demo</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/">
+
+  <!-- Bootstrap core CSS -->
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+  <!-- Fixed navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <img id ="logo" alt="logo" src="../static/images/history.jpeg"/>
+    <a class="navbar-brand header-right" href="index.html">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="about.html">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="reference.html">Reference</a>
+        </li>
+      </ul>
+      <div class="navbar-brand" style="line-height:60px !important; margin-left: 300px;font-family: cursive;font-size: 30px">
+        Python - AAA Testing!</div>
+    </div>
+
+  </nav>
+</header>
+<div class="flex-container b-example-divider">
+  <div class="flex-child sidenavnew flex-column flex-shrink-0 p-3 bg-white">
+
+    <ul class="list-unstyled ps-0">
+
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+          Python Home
+        </button>
+        <div class="collapse show" id="dashboard-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="pythonHome.html" class="link-dark rounded">Overview</a></li>
+            <li><a href="calc.html" class="link-dark rounded">Calculator Demo</a></li>
+            <li><a href="result.html" class="link-dark rounded">Calculator History</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="true">
+          Python Testing
+        </button>
+        <div class="collapse show" id="orders-collapse">
+          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+            <li><a href="aaatesting.html" class="link-dark rounded">AAA testing</a></li>
+            <li><a href="pytest.html" class="link-dark rounded">Pytest</a></li>
+            <li><a href="pylint.html" class="link-dark rounded">Pylint</a></li>
+
+          </ul>
+        </div>
+      </li>
+
+
+    </ul>
+
+
+  </div>
+
+  <div class="main-child">
+  <p>
+    Unit testing is a software testing method by which individual units of source code are put under various
+    tests to determine whether they are fit for use (Source). It determines and ascertains the quality of your
+    code. Test Runner is a library or a testing tool which reads the source code that contains unit tests and
+    a bunch of settings which can be executed and produces its output to the console or log files. There are
+    different Test Runners available in Python. Pylint is the popular Test Runner used by beginners. Things can
+    quickly spiral out of control for individuals who are just getting started with automated testing. It's
+    like a bottomless hole of acronyms, abbreviations, and long, difficult words. The AAA pattern is a test
+    structure pattern. The <b>“Arrange-Act-Assert”</b> (also AAA and 3A) pattern of testing was observed and named
+    by Bill Wake in 2001.<br>
+As an example we have created addition_test.py as follows which will be used to test whether addition works fine.
+
+  </p>
+  <img src="../static/images/img10.png" style="height: 250px;width: 1100px;">
+  <p style="padding-right: 80px;padding-top: 10px;">
+    <b>Importance of AAA :</b> <br>
+    It helps by unifying and clarifying the structure of tests which helps make the test
+    suite much more understandable and manageable.
+    It divides each test into three sections: Arrange, Act, and Assert, each of which is a step toward the
+    next. The Arrange phase puts up the input values for the test. The principal function being tested is
+    prompted by the act step. Finally, the assert step ensures that the function's output matches what was
+    expected. The pattern focuses each test on a single action. The advantage of this focus is that it clearly
+    separates the arrangement of the System Under Test (SUT) and the assertions that are made on it after the
+    action. <br>
+    In the code below, we can see that for each test case, we have 3 sections viz. Arrange, Act and Assert.
+    In ARRANGE, we are defining the values and instantiating an object of Addition Class and by passing values to
+    the addition method we have done with the ACT part as well.
+    <pre>
+    <code>
+      nos = (1.0, 2.0)
+    addition = Addition(nos)
+    </code>
+  </pre>
+    To put it another way, each step in the pattern is a function whose return value is the next
+    step's input.</p>
+    <br>
+    Eg:
+    <br><pre><code>
+    assert Calculator.addition(1, 2) == 3
+  <br></code></pre>
+  <p style="padding-right: 90px;padding-top: 10px;">
+    Here we are checking whether the output of the method  addition of the Calculator class is 3, when we provide
+    inputs as 1 & 2. In this example inputs are arranged as in Arrange block and code that sets up the conditions
+    for the test action to get result is framed using calling the method of Calculator class as in Act block. At
+    the end assert is used to verify the result.
+    Following is a complete example of a particular AAA testing method: <br>
+    <pre><code>
+    def test_calculator_multiply(setup_cleanup_fixture):<br>
+    """ tests multiplication of two numbers"""<br>
+    # pylint: disable=unused-argument,redefined-outer-name<br>
+    assert Calculator.multiplication(1, 2) == 2<br></p>
+    </code></pre>
+  <p style="padding-right: 100px;padding-top: 10px;">
+    In testing, a fixture provides a defined, reliable and consistent context for the tests. This could include
+    environment (for example a database configured with known parameters) or content (such as a dataset).<br></p>
+  Eg:<br><pre><code>
+  @pytest.fixture<br>
+  def setup_cleanup_fixture():<br>
+  """cleanup fixture"""<br>
+  History.clear_history()<br>
+</code></pre>
+  <p style="padding-right: 110px;padding-top: 10px;">
+  This fixture is used to clear the memory of historical calculations done before. @pytest.fixture is the annotation
+  used for creating fixtures. Then we can provide the steps which we need to use redundantly in the following tests.
+  Overall, the AAA pattern is just intended to be used as a guideline. It's a framework, or a technique of thinking
+  about and organizing your tests such that they're easy to comprehend. There is no documentation included in any
+  package or downloaded tool. Instead, it leaves it up to you, the author, to decide how to best produce and use it.
+  </p>
+  <p style="padding-right: 120px;padding-top: 10px;">
+    <b>Testing with external data using pandas
+    </b><br>
+    Data-driven testing is a framework in which test data is stored in an external location and kept separate
+    from functional tests. Instead of using the same hard-coded values each time the test runs, in data-driven
+    testing, test data and output values are read from files that can be stored in single or multiple data sources
+    such as comma-separated values (CSV) files, Excel sheets, XML, and databases. This allows automation engineers
+    to have a single test script that can run tests for all the test data.
+    Data-driven tests run the same test logic and assertions, but they fetch different input data each time which
+    increases the speed and productivity.
+    Pandas is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool,
+    built on top of the Python programming language. It is free software released under the three-clause BSD license.
+    Pandas is mainly used for data analysis. Pandas allows importing data from various file formats such as
+    comma-separated values, JSON, SQL, and Microsoft Excel. Pandas allows various data manipulation operations
+    such as merging, reshaping, selecting, as well as data cleaning, and data wrangling features.
+    A simple way to store big data sets is to use CSV files (comma separated files). CSV files contains plain text
+    and is a well know format that can be read by everyone including Pandas. We can import and use pandas as follows
+    for external data.</p>
+<pre>
+  <code>
+    import pandas as pd
+    df.to_csv("foo.csv") // Write to csv file
+    pd.read_csv("foo.csv") // Reading from csv files
+    df.to_excel("foo.xlsx", sheet_name="Sheet1") // Write to excel files
+    pd.read_excel("foo.xlsx", "Sheet1", index_col=None, na_values=["NA"]) //Read from excel files
+  </code>
+</pre>
+  <p style="padding-right: 130px;padding-top: 10px;">
+Using pandas we can test external data in any format as above which are present in csv, Excel files or HDF5 Store. On
+  reading CSV files Pandas will only return the first 5 rows, and the last 5 rows, so we can use max_rows to return
+  system's maximum rows with the pd.options.display.max_rows statement. One of the most used method for getting a
+    quick overview of the DataFrame, is the head() method.
+    The head() method returns the headers and a specified number of rows, starting from the top. There is also a
+    tail() method for viewing the last rows of the DataFrame.
+
+    The tail() method returns the headers and a specified number of rows, starting from the bottom.
+
+
+
+
+    <br><br><br>
+  </p>
+</div></div>
+<footer class="footer">
+  <div class="container">
+    <span class="text-muted" style="padding-left: 200px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&copy; Copyright 2021, Python Overview & Calculator  Inc &nbsp;&nbsp;|&nbsp;&nbsp;
+
+        Website Raised by Annu  &nbsp;&nbsp;|&nbsp;&nbsp; Contact us: mailto: aaj45@njit.edu  &nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Fsagaofinternetpythonandoops.eastus.azurecontainer.io%2F" style="text-decoration: none">W3CValidator link</a>
+    </span>
+  </div>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"  crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.6.0/umd/popper.min.js" integrity="sha512-BmM0/BQlqh02wuK5Gz9yrbe7VyIVwOzD1o40yi1IsTjriX/NGF37NyXHfmFzIlMmoSIBXgqDiG1VNU6kB5dBbA==" crossorigin="anonymous"></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
